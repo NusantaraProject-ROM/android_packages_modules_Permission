@@ -127,6 +127,10 @@ android_app {
         "modules-utils-build_system",
     ],
 
+    required: [
+        "default_permissions_com.android.permissioncontroller.xml",
+    ],
+
     proto: {
         type: "lite",
     },
@@ -140,4 +144,11 @@ android_app {
     },
 
     plugins: ["java_api_finder"],
+}
+
+prebuilt_etc_xml {
+    name: "default_permissions_com.android.permissioncontroller.xml",
+    src: "default_permissions_com.android.permissioncontroller.xml",
+    filename_from_src: true,
+    sub_dir: "default-permissions",
 }
